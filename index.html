@@ -44,10 +44,10 @@
                output.textContent = '';
                btn.disabled = true;
 
-               let link = input.value;
-               if ( !(link.includes('://')) ) {
-                  link = 'http://' + link;
+               if ( !(input.value.includes('://')) ) {
+                  input.value = 'http://' + input.value;
                }
+               const link = input.value;
 
                fetch(location.origin + '/compress', {
                   method: 'POST',
